@@ -1,14 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>IngSw2</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>IngSw2</title>
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<body>
+<div class="page home-page">
+  <!-- require header-->
+  <%= render partial: 'layouts/header' %>
+  <div class="page-content d-flex align-items-stretch">
+    <!--require navbar-->
+    <%= render partial: 'layouts/navbar' %>
+    <div class="content-inner">
+      <!-- Page Header-->
+          <header class="page-header">
+            <div class="container-fluid">
+              <h2 class="no-margin-bottom"><%= controller_name %></h2>
+            </div>
+          </header>
 
-  <body>
-    <%= yield %>
-  </body>
+      <%= yield %>
+      <!-- Page Footer-->
+      <footer class="main-footer">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-6">
+              <p>Your company &copy; 2017-2019</p>
+            </div>
+            <div class="col-sm-6 text-right">
+              <p>Design by
+                <a href="https://bootstrapious.com/admin-templates" class="external">Bootstrapious</a>
+              </p>
+              <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+</div>
+<!-- Javascript files-->
+</body>
+
+
 </html>

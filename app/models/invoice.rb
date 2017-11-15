@@ -11,7 +11,6 @@
 
 class Invoice < ApplicationRecord
   has_many :reports
-
   validates :date, presence: true
   validates :date, presence: true
 end

@@ -10,6 +10,12 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+
+ *= require vendor/bootstrap/css/bootstrap.min.css
+ *= require css/fontastic.css
+ *= require vendor/font-awesome/css/font-awesome.min.css
+ *= require css/style.default.css
+
  *= require_tree .
  *= require_self
  */
