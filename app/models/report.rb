@@ -13,12 +13,13 @@
 
 class Report < ApplicationRecord
   belongs_to :client
-  belongs_to :inovice
+  belongs_to :inovice, optional: true
 
   validates :hours, presence: true, numericality: {greater_then: 0}
+  validates :description, precence: true
   validates :client_id, presence: true
 
-  def self.unbilled
-    invoice_id.nil?
+  def unbilled?
+    !invoice_id.nil?
   end
 end
