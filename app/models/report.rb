@@ -16,7 +16,7 @@ class Report < ApplicationRecord
   belongs_to :inovice, optional: true
 
   validates :hours, presence: true, numericality: {greater_then: 0}
-  validates :description, precence: true
+  validates :description, presence: true
   validates :client_id, presence: true
 
   def unbilled?
