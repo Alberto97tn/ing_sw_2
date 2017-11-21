@@ -2,7 +2,7 @@
 <nav class="side-navbar">
   <!-- Sidebar Header-->
   <div class="sidebar-header d-flex align-items-center">
-    <div class="avatar"><%=image_tag("img/manageImg.png",class:"img-fluid rounded-circle")%></div>
+    <div class="avatar"><%#image_tag("img/manageImg.png",class:"img-fluid rounded-circle")%></div>
     <div class="title">
       <h1 class="h4">DataManage</h1>
       <p>Application</p>
@@ -10,12 +10,9 @@
   </div>
   <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
   <ul class="list-unstyled">
-    <li class="active"> <a href="<%=root_path%>"><i class="icon-home"></i>Home</a></li>
-    <li> <a href="<%=clients_path%>"> <i class="icon-grid"></i>Clients </a></li>
-    <li> <a href="<%=reports_path%>"> <i class="fa fa-bar-chart"></i>Reports </a></li>
-    <li> <a href="<%=invoices_path%>"> <i class="icon-padnote"></i>Invoices </a></li>
-
-
-
-
+    <li class="active"><a href="<%= root_path %>"><i class="icon-home"></i>Home</a></li>
+    <li><a href="<%= clients_path %>"> <i class="icon-grid"></i>Clients </a></li>
+    <li><a href="<%= reports_path %>"> <i class="fa fa-bar-chart"></i>Reports </a></li>
+    <li><a href="<%= invoices_path %>"> <i class="icon-padnote"></i>Invoices </a></li>
+  </ul>
 </nav>
