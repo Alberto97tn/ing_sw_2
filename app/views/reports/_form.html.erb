@@ -1,37 +1,29 @@
-<%= form_with(model: report, local: true) do |form| %>
-  <% if report.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(report.errors.count, "error") %> prohibited this report from being saved:</h2>
+<div class="row justify-content-md-center">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body ">
 
-      <ul>
-      <% report.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <%= simple_form_for(@report) do |f| %>
+            <% if report.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(report.errors.count, "error") %> prohibited this report from
+                    being
+                    saved:</h2>
+
+                  <ul>
+                    <% report.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                    <% end %>
+                  </ul>
+                </div>
+            <% end %>
+
+            <%= f.association :client, required: true %>
+            <%= f.input :hours, required: true %>
+            <%= f.input :description %>
+            <%= f.button :submit_cancel, 'Save', cancel: :back %>
+        <% end %>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :hours %>
-    <%= form.number_field :hours, id: :report_hours %>
   </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description, id: :report_description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :client_id %>
-    <%= form.number_field :client_id, id: :report_client_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :invoice_id %>
-    <%= form.number_field :invoice_id, id: :report_invoice_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

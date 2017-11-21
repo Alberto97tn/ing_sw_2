@@ -1,35 +1,35 @@
-<section class="<%= controller_name%>">
+<section class="<%= controller_name %>">
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-12">
         <div class="card">
           <div class="card-header d-flex align-items-center">
-            <h3 class="h4">bopoh</h3>
+            <h3 class="h4"><%= link_to 'New Invoice', new_invoice_path, class: "btn btn-primary" %></h3>
           </div>
           <div class="card-body">
             <table class="table">
               <thead>
-                <tr>
-                  <th>Client</th>
-                  <th>Date</th>
-                  <th>Created_at</th>
-                  <th>Updated_at</th>
-                  <th colspan="3"></th>
-                </tr>
+              <tr>
+                <th>Client</th>
+                <th>Date</th>
+                <th>Created_at</th>
+                <th>Updated_at</th>
+                <th colspan="3"></th>
+              </tr>
               </thead>
 
               <tbody>
-                <% @invoices.each do |invoice| %>
-                <tr>
-                  <td><%= invoice.client_id %></td>
-                  <td><%= invoice.date %></td>
-                  <td><%=invoice.created_at%></td>
-                  <td><%=invoice.updated_at%></td>
-                  <td><%= link_to 'Show',invoice %></td>
-                  <td><%= link_to 'Edit', edit_invoice_path(invoice) %></td>
-                  <td><%= link_to 'Destroy', invoice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                </tr>
-                <% end %>
+              <% @invoices.each do |invoice| %>
+                  <tr>
+                    <td><%= invoice.client_id %></td>
+                    <td><%= invoice.date %></td>
+                    <td><%= invoice.created_at %></td>
+                    <td><%= invoice.updated_at %></td>
+                    <td><%= link_to 'Show', invoice %></td>
+                    <td><%= link_to 'Edit', edit_invoice_path(invoice) %></td>
+                    <td><%= link_to 'Destroy', invoice, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+                  </tr>
+              <% end %>
               </tbody>
             </table>
           </div>
@@ -39,6 +39,3 @@
   </div>
 </section>
 <p id="notice"><%= notice %></p>
-
-
-<%= link_to 'New Invoice', new_invoice_path %>
