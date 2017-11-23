@@ -1,22 +1,38 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @client.name %>
-</p>
-
-<p>
-  <strong>Surname:</strong>
-  <%= @client.surname %>
-</p>
-<p>
-    <strong>Email:</strong>
-    <%= @client.email %>
-</p>
-<p>
-    <strong>Phone_Number:</strong>
-    <%= @client.phone_number %>
-</p>
-
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>
+<section class="<%= controller_name.titleize %>">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card">
+          <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <td>
+                    <strong>Name</strong>
+                  </td>
+                  <td><%=@client.name%></td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Surname</strong>
+                  </td>
+                  <td><%=@client.surname%></td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Email<strong></td>
+                      <td><%=@client.email%></td>
+                    </tr>
+                  </thead>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col offset-sm-0,5">
+      <h3 class="h4"><%= link_to 'Edit ', edit_client_path, class: "btn btn-primary" %></h3>
+      <h3 class="h4"><%= link_to 'Back ', clients_path, class: "btn btn-primary" %></h3>
+    </div>
+  </section>
