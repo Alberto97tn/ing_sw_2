@@ -15,4 +15,8 @@ class Client < ApplicationRecord
   has_many :reports, dependent: :destroy
   has_many :invoices
 
+  def fullname
+    "#{name} #{surname}"
+  end
+
 end
