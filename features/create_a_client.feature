@@ -7,14 +7,14 @@ Feature: Crete a client
     Given I have an acoount
     And I am Logged In
 
-  Scenario: create a client
+  Scenario: Create a client
     Given I am in a list of clients
     And I click on "New client"
     When I fill to add new client from valid data
     And I click "Save"
     Then I should see the client page
 
-  Scenario: can't leave Name and Surname blank
+  Scenario: Can't leave Name and Surname blank
     Given I am in a list of clients
     And I click on "New client"
     And I insert the name to "" or the surname to""

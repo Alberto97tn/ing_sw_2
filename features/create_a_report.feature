@@ -10,15 +10,15 @@ re
     And I am Logged In
 
 #Creo Scenario di come creare un report
-  Scenario: create a report
+  Scenario: Create a report
     Given I am on the list of reports
     When I click on "New Report"
     And I fill in the form with valid data
     And I click on "Save"
     Then I should see the report page
     
-#Creo Scenario in caso non compilo il form come si deve
-  Scenario: can't leave any fields blank
+#Creo Scenario dove il form non lo riempio con dati validi
+  Scenario: Can't leave any fields blank
     Given I am on the list of reports
     When I click on "New Report"
     And I don't insert any fields

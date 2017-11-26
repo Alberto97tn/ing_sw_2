@@ -12,7 +12,9 @@ Feature: create a invoice
   Scenario: create a new invoices
     Given I am on a lists of invoices
     And I click on "New invoice"
-    When I fill to add new invoice from valid data
+    When I select the client
+    Then I can select all the unbilled report or part of this
+    And I fill the form with valid data
     And I click on "Save"
     Then I should see the invoice page
 #Creao Scenario in caso negativo ovvero non inserico i dati
