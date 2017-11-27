@@ -19,7 +19,18 @@
             <% end %>
 
             <%= f.association :client, required: true %>
+
+            <div class="form-group  required" id="selection_multiple" hidden="true">
+              <label class="control-label select" for="invoice_reports"><abbr title="required">*</abbr>
+                Reports</label>
+              <%= f.input_field :reports_ids, as: :select, collection:{}, multiple:true %>
+            </div>
+
             <%= f.input :date, required: true %>
+            <%= f.input :hourly_cost %>
+            <%= f.input :vat %>
+            <%= f.input :invoice_number, value: Invoice.count+1%>
+            <%= f.input :amount %>
             <%= f.button :submit_cancel, 'Save', cancel: :back %>
         <% end %>
       </div>

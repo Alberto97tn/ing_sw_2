@@ -14,7 +14,8 @@
  *= require vendor/bootstrap/css/bootstrap.min.css
  *= require css/fontastic.css
  *= require vendor/font-awesome/css/font-awesome.min.css
- *= require css/style.default.css 
+ *= require css/style.default.css
+ *= require vendor/select2-4.0.5/dist/css/select2.min.css
 
  *= require_tree .
  *= require_self

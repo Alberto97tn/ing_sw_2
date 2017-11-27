@@ -18,7 +18,17 @@
 //= require vendor/bootstrap/js/bootstrap.min.js
 //= require vendor/jquery.cookie/jquery.cookie.js
 //= require vendor/jquery-validation/jquery.validate.min.js
+//= require js/front.js
+//= require vendor/select2-4.0.5/dist/js/select2.min.js
 
 
+// require_tree.
 
-//= require_tree .
+//= require app.js
+//= require invoices.js
+
+jQuery.ajaxSetup({
+    beforeSend: function (xhr) {
+        xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
+    }
+});

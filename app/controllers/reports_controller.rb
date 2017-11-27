@@ -12,6 +12,15 @@ class ReportsController < ApplicationController
   def show
   end
 
+
+  def unbilled_reports_by_client
+    # andiamo a selezionare tutti i report che appartengono al cliente, ma non sono già stati messi nelle fatture
+    @reports = Report.where(client_id: params[:client_id], invoice_id: nil)
+    respond_to do |format|
+      format.json
+    end
+  end
+
   # GET /reports/new
   def new
     @report = Report.new
@@ -28,11 +37,11 @@ class ReportsController < ApplicationController
 
     respond_to do |format|
       if @report.save
-        format.html { redirect_to @report, notice: 'Report was successfully created.' }
-        format.json { render :show, status: :created, location: @report }
+        format.html {redirect_to @report, notice: 'Report was successfully created.'}
+        format.json {render :show, status: :created, location: @report}
       else
-        format.html { render :new }
-        format.json { render json: @report.errors, status: :unprocessable_entity }
+        format.html {render :new}
+        format.json {render json: @report.errors, status: :unprocessable_entity}
       end
     end
   end
@@ -42,11 +51,11 @@ class ReportsController < ApplicationController
   def update
     respond_to do |format|
       if @report.update(report_params)
-        format.html { redirect_to @report, notice: 'Report was successfully updated.' }
-        format.json { render :show, status: :ok, location: @report }
+        format.html {redirect_to @report, notice: 'Report was successfully updated.'}
+        format.json {render :show, status: :ok, location: @report}
       else
-        format.html { render :edit }
-        format.json { render json: @report.errors, status: :unprocessable_entity }
+        format.html {render :edit}
+        format.json {render json: @report.errors, status: :unprocessable_entity}
       end
     end
   end
@@ -56,19 +65,19 @@ class ReportsController < ApplicationController
   def destroy
     @report.destroy
     respond_to do |format|
-      format.html { redirect_to reports_url, notice: 'Report was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html {redirect_to reports_url, notice: 'Report was successfully destroyed.'}
+      format.json {head :no_content}
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_report
-      @report = Report.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_report
+    @report = Report.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def report_params
-      params.require(:report).permit(:hours, :description, :client_id, :invoice_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def report_params
+    params.require(:report).permit(:hours, :description, :client_id, :invoice_id)
+  end
 end

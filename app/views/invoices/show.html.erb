@@ -6,30 +6,35 @@
           <div class="card-body">
             <table class="table">
               <thead>
-                <tr>
-                  <td>
-                    <strong>Date</strong>
-                  </td>
-                  <td><%=@invoice.date%></td>
-                </tr>
-                <tr>
-                  <td>
-                    <strong>Client</strong>
-                  </td>
-                  <td><%=@invoice.client.fullname%></td>
-                </tr>
+              <tr>
+                <td>
+                  <strong>Date</strong>
+                </td>
+                <td><%= @invoice.date %></td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Client</strong>
+                </td>
+                <td><%= @invoice.client.fullname %></td>
+              </tr>
+
+              <% Report.where(invoice_id: @invoice.id).each do |report| %>
+                  <%= report.description %>
+                  <%= report.hours %>
+              <% end %>
               </thead>
-            </tbody>
-          </table>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div class="form-grouprow">
-  <div class="col offset-sm-0,5">
-    <h3 class="h4"><%= link_to 'Edit ', edit_invoice_path, class: "btn btn-primary" %></h3>
-    <h3 class="h4"><%= link_to 'Back ', invoices_path, class: "btn btn-primary" %></h3>
+  <div class="form-grouprow">
+    <div class="col offset-sm-0,5">
+      <h3 class="h4"><%= link_to 'Edit ', edit_invoice_path, class: "btn btn-primary" %></h3>
+      <h3 class="h4"><%= link_to 'Back ', invoices_path, class: "btn btn-primary" %></h3>
+    </div>
   </div>
-</div>
 </section>

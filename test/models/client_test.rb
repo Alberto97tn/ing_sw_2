@@ -9,6 +9,9 @@
 #  phone_number :string
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
+#  company_name :string
+#  vat_number   :string
+#  addres       :string
 #
 
 require 'test_helper'
