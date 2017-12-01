@@ -6,11 +6,6 @@ Given("I am on the list of reports ") do
   @reports = Report.all
 end
 
-When("I click on {string}") do |string|
-  click_on string \
-
-end
-
 When("I fill in the form with valid data") do
   fill_in 'Hours', with: 5
   fill_in 'Description', with: "la descrizione è una cosa importante"
