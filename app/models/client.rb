@@ -11,7 +11,7 @@
 #  updated_at   :datetime         not null
 #  company_name :string
 #  vat_number   :string
-#  addres       :string
+#  address      :string
 #
 
 class Client < ApplicationRecord

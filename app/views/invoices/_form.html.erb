@@ -4,34 +4,34 @@
       <div class="card-body ">
 
         <%= simple_form_for(@invoice) do |f| %>
-            <% if invoice.errors.any? %>
-                <div id="error_explanation">
-                  <h2><%= pluralize(invoice.errors.count, "error") %> prohibited this invoice from
-                    being
-                    saved:</h2>
+        <% if invoice.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(invoice.errors.count, "error") %>
+            prohibited this invoice from being saved:</h2>
 
-                  <ul>
-                    <% invoice.errors.full_messages.each do |message| %>
-                        <li><%= message %></li>
-                    <% end %>
-                  </ul>
-                </div>
+          <ul>
+            <% invoice.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
             <% end %>
+          </ul>
+        </div>
+        <% end %>
 
-            <%= f.association :client, required: true %>
+        <%= f.association :client, required: true %>
 
-            <div class="form-group  required" id="selection_multiple" hidden="true">
-              <label class="control-label select" for="invoice_reports"><abbr title="required">*</abbr>
-                Reports</label>
-              <%= f.input_field :reports_ids, as: :select, collection:{}, multiple:true %>
-            </div>
+        <div class="form-group  required" id="selection_multiple" hidden="true">
+          <label class="control-label select" for="invoice_reports">
+            <abbr title="required">*</abbr>
+            Reports</label>
+          <%= f.input_field :reports_ids, as: :select, collection:{}, multiple:true %>
+        </div>
 
-            <%= f.input :date, required: true %>
-            <%= f.input :hourly_cost %>
-            <%= f.input :vat %>
-            <%= f.input :invoice_number, value: Invoice.count+1%>
-            <%= f.input :amount %>
-            <%= f.button :submit_cancel, 'Save', cancel: :back %>
+        <%= f.input :date, required: true %>
+        <%= f.input :hourly_cost %>
+        <%= f.input :vat %>
+        <%= f.input :invoice_number, value: Invoice.count+1%>
+        <%= f.input :amount %>
+        <%= f.button :submit_cancel, 'Save', cancel: :back %>
         <% end %>
       </div>
     </div>
