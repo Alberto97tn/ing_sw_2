@@ -6,10 +6,10 @@ Feature: Edit a client
   Background:
     Given I have an acoount
     And I am Logged In
-    And I have a client with name "FBK"
+    And I have a client
 
   Scenario: Edit a client
-    Given I am in client called "FBK" page
+    Given I am in client page
     And I click on "Edit"
     When I fill to edit the client from with valid data
     And I click "Save"
