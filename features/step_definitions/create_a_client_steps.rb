@@ -1,27 +1,44 @@
-Given("I have an acoount") do
-  @user=FactoryBot.create(:user)
+=begin
+Given ('I have a lists of clients') do
+  @clients = FactoryBot.create_list(:client, 10)
+  @clients = Client.all
+end
+=end
 
-end
-And ("I am Logged In") do
-  visit loggin_path
-  fill_in "Email", with: @user.email
-  fill_in "Password", with: @user.password
-  click_on "Submit"
-  expect "SCRIVI DOVE VERAI MANDATO DOPO IL LOGIN"
-  #dobbiamo ancora creare la parte del LOGIN
+Given('I am in the index page') do
+  visit clients_path
+  page.should have_css('.clients.index')
 end
 
-Given ("I have a lists of clients") do
-  @clients=Client.all
+
+And("I fill to add new client from valid data") do
+  fill_in 'Name', with: 'a....z'
+  fill_in 'Surname', with: 'a....z'
+  fill_in 'Email', with: 'hello@world.it'
+  fill_in 'Phone number', with: 345_785_965
+  fill_in 'Company name', with: 'a....z'
+  fill_in 'Vat number', with: '243542dsasda'
+  fill_in 'Address', with: 'via don ermolao '
 end
-And("I click on New Client") do
-  fill_in "Name", with: "a....z"
-  fill_in "Surname", with: "a....z"
-  fill_in "Email", with: "hello@world.it"
-  fill_in "Phone Number", with: 345785965
-  click_on "Save"
+
+
+And("I insert the name blank") do
+  fill_in 'Name', with: ''
+  fill_in 'Surname', with: 'a....z'
+  fill_in 'Email', with: 'hello@world.it'
+  fill_in 'Phone number', with: 345_785_965
+  fill_in 'Company name', with: 'a....z'
+  fill_in 'Vat number', with: '243542dsasda'
+  fill_in 'Address', with: 'via don ermolao '
 end
-Then ("I should see the client page") do
-  @clients=Client.last
-  expect(page).to have_content(client.description)
+
+=begin
+Then("I should see one message of error") do
+  message = page.find("#link_url").native.attribute("validationMessage")
+  expect(message).to eq "Compilare questo campo"
+end
+=end
+Then('I should see the client page') do
+  @client = Client.last
+  expect(page).to have_content(@client.name)
 end
