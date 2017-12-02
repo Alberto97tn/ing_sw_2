@@ -19,7 +19,19 @@ Given /^I am not signed in$/ do
 end
 =end
 
+Given('I have a user') do
+  @user = FactoryBot.create(:user)
+end
 
-Given("I am on the login page") do
-  visit
+Given('I am on the login page') do
+  visit root_path
+end
+
+When('I fill the login form') do
+  fill_in 'Email', with: @user.email
+  fill_in 'Password', with: 'demodemo1'
+end
+
+Then('I should be on the home page') do
+  expect(page).to have_content('dashboard')
 end

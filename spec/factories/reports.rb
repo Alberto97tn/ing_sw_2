@@ -13,10 +13,8 @@
 
 FactoryBot.define do
   factory :report do
-    hours 4
-    description "Test_hello"
-    invoice
+    sequence(:hours) { |n| n}
+    sequence(:description) { |n| "Test_hello#{n}"}
     client
-
   end
 end

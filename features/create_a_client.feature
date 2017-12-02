@@ -9,17 +9,20 @@ Feature: Crete a client
 
 
   Scenario: Create a client
-    Given I am in the index page
+    Given I am in the clients index page
     When I click on "New Client"
     And I fill to add new client from valid data
     And I click on "Save"
     Then I should see the client page
 
   Scenario: Can't leave Name  blank
-    Given I am in the index page
+    Given I am in the clients index page
     When I click on "New Client"
     And I insert the name blank
+    And The form require some inputs
     And I click on "Save"
+    Then I must continue to see the client form page
+
     #Then I should see one message of error
     # questo non riusciamo a testarlo perché utilizziamo la validazione tramite l'html 5
     # utilizzando "required: true" nella generazione del form.

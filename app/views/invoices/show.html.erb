@@ -16,15 +16,13 @@
                 <td>
                   <strong>Client</strong>
                 </td>
-                <td><%= @invoice.client.fullname %></td>
+                <td><%= @invoice.client.full_name %></td>
               </tr>
-
               <% Report.where(invoice_id: @invoice.id).each do |report| %>
-                  <%= report.description %>
-                  <%= report.hours %>
+                <%= report.description %>
+                <%= report.hours %>
               <% end %>
               </thead>
-              </tbody>
             </table>
           </div>
         </div>

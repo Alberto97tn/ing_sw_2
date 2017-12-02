@@ -15,13 +15,13 @@
 #
 
 FactoryBot.define do
-  factory :client do
-    name "Adolfo " + random_string.to_s
-    surname "Villafiorita"
-    email "test@test.com"
-    company_name "FBK"
-    vat_number "12234323432"
-    address "Via vsqdsadsfasda"
+  factory :client do |client|
+    sequence(:name) {|n| "Adolfo#{n}"}
+    sequence(:surname) {|n| "Villafiorita#{n}"}
+    sequence(:email) {|n| "test@test.com#{n}"}
+    sequence(:company_name) {|n| "FBK#{n}"}
+    sequence(:vat_number) {|n| "12234323432#{n}"}
+    sequence(:address) {|n| "Via vsqdsadsfasda#{n}"}
   end
 end
 

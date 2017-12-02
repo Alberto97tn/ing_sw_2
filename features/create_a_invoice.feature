@@ -6,21 +6,25 @@ Feature: create a invoice
   #Per fare questa operazione devo per
   #forza essere loggato, dunque -->
   Background:
-    Given I have an acoount
+    Given I have an account
     And I am Logged In
+    Given  I have Clients
+    And I have some client's reports
+
 #Creo Scenario per la creazione di una "new invoce"
   Scenario: create a new invoices
-    Given I am on a lists of invoices
-    And I click on "New invoice"
+    Given I am in the invoices index page
+    And I click on 'New Invoice'
     When I select the client
-    Then I can select all the unbilled report or part of this
+    Then I can select some unbilled reports
     And I fill the form with valid data
     And I click on "Save"
     Then I should see the invoice page
+    And The amount should be equal to the the amount of hours for the hourly_cost plus vat
 #Creao Scenario in caso negativo ovvero non inserico i dati
   Scenario: can't leave Client blank
-    Given I am on a lists of invoices
-    And I click on "New invoice"
-    And I doesn't select any client
-    And I click "Save"
-    Then I should see one messagge of error
+    Given I am in the invoices index page
+    And I click on "New Invoice"
+    And The form require some inputs
+    And I click on "Save"
+    Then I should see the invoices form

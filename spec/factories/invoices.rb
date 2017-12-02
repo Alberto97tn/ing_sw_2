@@ -17,10 +17,9 @@ FactoryBot.define do
   factory :invoice do
     date Date.current
     invoice_number 1
-    amount 133,0
-    vat 0,22
+    amount 133.0
+    vat 0.22
     hourly_cost 15
-    client 
-
+    client
   end
 end

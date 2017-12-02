@@ -1,17 +1,14 @@
-=begin
-Given ('I have a lists of clients') do
-  @clients = FactoryBot.create_list(:client, 10)
-  @clients = Client.all
-end
-=end
+# Given ('I have a lists of clients') do
+#   @clients = FactoryBot.create_list(:client, 10)
+#   @clients = Client.all
+# end
 
-Given('I am in the index page') do
+Given('I am in the clients index page') do
   visit clients_path
-  page.should have_css('.clients.index')
+  expect(page).to have_css('.clients.index')
 end
 
-
-And("I fill to add new client from valid data") do
+And('I fill to add new client from valid data') do
   fill_in 'Name', with: 'a....z'
   fill_in 'Surname', with: 'a....z'
   fill_in 'Email', with: 'hello@world.it'
@@ -21,9 +18,7 @@ And("I fill to add new client from valid data") do
   fill_in 'Address', with: 'via don ermolao '
 end
 
-
-And("I insert the name blank") do
-  fill_in 'Name', with: ''
+And('I insert the name blank') do
   fill_in 'Surname', with: 'a....z'
   fill_in 'Email', with: 'hello@world.it'
   fill_in 'Phone number', with: 345_785_965
@@ -32,13 +27,16 @@ And("I insert the name blank") do
   fill_in 'Address', with: 'via don ermolao '
 end
 
-=begin
-Then("I should see one message of error") do
-  message = page.find("#link_url").native.attribute("validationMessage")
-  expect(message).to eq "Compilare questo campo"
-end
-=end
+
+# Then("I should see one message of error") do
+#   message = page.find("#link_url").native.attribute("validationMessage")
+#   expect(message).to eq "Compilare questo campo"
+# end
 Then('I should see the client page') do
   @client = Client.last
   expect(page).to have_content(@client.name)
+end
+
+Then('I must continue to see the client form page') do
+  expect(page).to have_css('.clients.new')
 end

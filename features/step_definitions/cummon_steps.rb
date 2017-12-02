@@ -12,3 +12,7 @@ end
 When("I click on {string}") do |string|
   click_on string \
 end
+
+And('The form require some inputs') do
+  expect(page).to have_xpath("//input[@required='required']")
+end
