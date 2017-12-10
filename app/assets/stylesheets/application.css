@@ -17,6 +17,7 @@
  *= require css/style.default.css
  *= require vendor/select2-4.0.5/dist/css/select2.min.css
 
+
  *= require_tree .
  *= require_self
  */

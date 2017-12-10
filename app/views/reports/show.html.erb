@@ -20,13 +20,20 @@
               </tr>
               <tr>
                 <td>
-                  <strong>Client_ID<strong>
+                  <strong>Client_ID</strong></td>
                 <td><%= @report.client_id %></td>
               </tr>
               <tr>
                 <td>
-                  <strong>Invoice<strong>
+                  <strong>Invoice</strong></td>
                 <td><%= @report.invoice_id %></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="btn-group">
+                    <%= link_to 'Delete', @report, method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-primary" %>
+                  </div>
+                </td>
               </tr>
               </thead>
             </table>
@@ -37,8 +44,8 @@
   </div>
   <div class="col offset-sm-0,5">
     <div class="btn-group">
-      <%= link_to 'Edit ', edit_report_path, class: "btn btn-primary" %>
       <%= link_to 'Back ', reports_path, class: "btn btn-secondary" %>
+      <%= link_to 'Edit ', edit_report_path, class: "btn btn-primary" %>
     </div>
   </div>
 </section>

@@ -1,57 +1,57 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <%= csrf_meta_tags %>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Bootstrap Material Admin by Bootstrapious.com</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="all,follow">
+  <head>
+    <%= csrf_meta_tags %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>InvoiceApplication</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
 
-  <!-- Google fonts - Poppins -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+    <!-- Google fonts - Poppins -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
 
-  <!-- Tweaks for older IEs-->
+    <!-- Tweaks for older IEs-->
 
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-</head>
-<body>
-<div class="page login-page">
-  <div class="container d-flex align-items-center">
-    <div class="form-holder has-shadow">
-      <div class="row">
-        <!-- Logo & Information Panel-->
-        <div class="col-lg-6">
-          <div class="info d-flex align-items-center">
-            <div class="content">
-              <div class="logo">
-                <h1>Invoie<font color="black">Application</font></h1>
+  </head>
+  <body>
+    <div class="page login-page">
+      <div class="container d-flex align-items-center">
+        <div class="form-holder has-shadow">
+          <div class="row">
+            <!-- Logo & Information Panel-->
+            <div class="col-lg-6">
+              <div class="info d-flex align-items-center">
+                <div class="content">
+                  <div class="logo">
+                    <h1>Invoie<font color="black">Application</font>
+                    </h1>
+                  </div>
+                </div>
               </div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
             </div>
-          </div>
-        </div>
-        <!-- Form Panel    -->
-        <div class="col-lg-6 bg-white">
-          <div class="form d-flex align-items-center">
-            <div class="content">
-              <%= yield %>
+            <!-- Form Panel    -->
+            <div class="col-lg-6 bg-white">
+              <div class="form d-flex align-items-center">
+                <div class="content">
+                  <%= yield %>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="copyrights text-center">
+        <p>Create by
+          <a href="https://github.com/Nittarab">Barattin P.</a>
+          <a href="https://github.com/Bobbians">Girdea R.</a>
+        </p>
+        <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
+      </div>
     </div>
-  </div>
-  <div class="copyrights text-center">
-    <p>Create by
-      <a href="https://github.com/Nittarab">Barattin P.</a>
-      <a href="https://github.com/Bobbians">Girdea R.</a>
-    </p>
-    <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
-  </div>
-</div>
-</body>
+  </body>
 </html>
