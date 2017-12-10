@@ -13,8 +13,8 @@ When("I fill in the form with valid data") do
   click_on 'Save'
 end
 
+ 
 Then("I should see the the report page") do
   report = Report.last
   expect(page).to have_content(report.description)
 end
-

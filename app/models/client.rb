@@ -19,7 +19,7 @@ class Client < ApplicationRecord
   has_many :invoices
 
   def fullname
-    "#{name} #{surname}"
+    "#{name} #{surname}"  
   end
 
 end
