@@ -23,7 +23,6 @@ Then('I should see the report page') do
   @report = Report.last
   expect(page).to have_content(@report.descritpion)
 end
-=======
 
 Then('I must continue to see the report form page') do
   expect(page).to have_css('.reports.new')
