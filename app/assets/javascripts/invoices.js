@@ -29,11 +29,7 @@ App.Invoices = {
         });
         $("#invoice_hourly_cost").on("change", function () {
             App.Invoices.setAmmount();
-        })
-        $("#invoice_vat").on("change", function () {
-            App.Invoices.setAmmount();
-        })
-
+        });
 
     },
 
@@ -42,7 +38,6 @@ App.Invoices = {
         var ids = $("#invoice_reports_ids").val();
         $("#reports_table > tbody").html("");
         for (i = 0; i < ids.length; i++) {
-
             $.get("/reports/" + ids[i] + ".json").done(function (report) {
                 var row = $('<tr />');
                 row.append($('<td />').html(report.description));
