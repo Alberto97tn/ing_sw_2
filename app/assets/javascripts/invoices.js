@@ -14,7 +14,6 @@ App.Invoices = {
 
         $("#invoice_client_id").on("change", function () {
             $.get("/reports/unbilled_reports_by_client.json?client_id=" + $("#invoice_client_id").val()).done(function (data) {
-
                 reports = data;
                 $("#invoice_reports_ids").select2({
                     placeholder: 'Select the reports',

@@ -51,7 +51,7 @@
               </tr>
               </thead>
               <tbody>
-              <% Report.where(invoice_id: @invoice.id).each do |report| %>
+              <% @invoice.reports.each do |report| %>
                 <tr>
                   <td><%= report.description %></td>
                   <td><%= report.hours %></td>
