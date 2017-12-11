@@ -21,9 +21,27 @@
               </tr>
               <tr>
                 <td>
+                  <strong>Vat</strong>
+                </td>
+                <td><%= @invoice.vat %> $</td>
+              </tr>
+              <tr>
+              <tr>
+                <td>
+                  <strong>Hourly cost</strong>
+                </td>
+                <td><%= @invoice.hourly_cost %> $</td>
+              </tr>
+                <td>
                   <strong>Amount</strong>
                 </td>
-                <td><%= @invoice.amount %></td>
+                <td><%= @invoice.amount %> $</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Amount with vat</strong>
+                </td>
+                <td><%= @invoice.amount * (1 + @invoice.vat / 100)%> $</td>
               </tr>
               <tr>
                 <td>
@@ -47,7 +65,7 @@
                 <th>
                   <strong>Descritpion</strong>
                 </th>
-                <th><strong>Client</strong></th>
+                <th><strong>Hours</strong></th>
               </tr>
               </thead>
               <tbody>
