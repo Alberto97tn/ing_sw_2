@@ -1,24 +1,11 @@
-# README
+# InvoicesManager 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Progetto scolastico per il corso di Ingegneria del sotfware 2, gestionale per le fatture realizzato in ruby on rails
 
-Things you may want to cover:
+* Gestisce un database di Clienti
 
-* Ruby version
+* Permette di creare dei report orari per ogni cliente
 
-* System dependencies
+* Permette di creare delle fatture, anche in pdf, per i clienti.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Presentazione completa su questo [link](https://docs.google.com/presentation/d/1N3_idcXaNJD3zxyTkMqDvOBdMEYPRP3D2ZDbPYRqPlQ/edit?usp=sharing)
