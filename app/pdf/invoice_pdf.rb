@@ -21,7 +21,7 @@ class InvoicePdf
             ["<b>Phone Number</b>: #{@client.phone_number}"], # fine riga
             ["<b>Phone Address</b>: #{@client.address}"]] # fine riga # Fine colonna
 
-    table(data, column_widths: [], cell_style: { inline_format: true }) do |t|
+    table(data, column_widths: [], cell_style: {inline_format: true}) do |t|
       t.cells.top_padding = 1
       t.cells.border_width = 0
       # t.row(0).border_top_with = 1
@@ -33,14 +33,13 @@ class InvoicePdf
   def titolo
     content = \
       "<font size='40' align=''><b>Fattura</b></font>"
-    { content: content, colspan: 3 }
+    {content: content, colspan: 3}
   end
 
   def reports_table
-    data = [%w[Report Desription Hours Price]]
+    data = [["Desription", "Hours", "Price"]]
 
-
-    table(data) do |t|
+    table(data, column_widths: [180, 180, 180]) do |t|
       t.cells.top_padding = 1
       t.cells.border_width = 1
       t.row(0).font_style = :bold
@@ -49,7 +48,9 @@ class InvoicePdf
     end
   end
 
-  def total_table; end
+  def total_table;
+  end
 
-  def footer; end
+  def footer;
+  end
 end

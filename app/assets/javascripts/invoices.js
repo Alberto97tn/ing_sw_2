@@ -1,6 +1,15 @@
 App.Invoices = {
 
     create: function () {
+
+        /*function search(nameKey, myArray) {
+            for (var i = 0; i < myArray.length; i++) {
+                if (myArray[i].name === nameKey) {
+                    return myArray[i];
+                }
+            }
+        }*/
+
         var reports;
 
         $("#invoice_client_id").on("change", function () {
@@ -17,26 +26,36 @@ App.Invoices = {
             });
         });
         $("#invoice_reports_ids").on("change", function () {
-            console.log(reports);
-
-
-            selected = $("#invoice_reports_ids").val().map(element){
-                return reports.map(elem)
-            }
-
-            // $("#reports_table").find('tbody').append("<tr><th>"+report.description+"</th><th>"+report.hours+"</th></tr>")
-            $("#reports_table > tbody").html("");
-            for (i = 0; i < data.length; i = i + 1) {
-                row = $('<tr />');
-                for (j = 1; j < data[i].length; j = j + 1) {
-                    row.append($('<td />').html(data[i][j]));
-                }
-                console.log(row);
-                $("#reports_table > tbody").append(row);
-            }
-
+            App.Invoices.setAmmount();
         });
+        $("#invoice_hourly_cost").on("change", function () {
+            App.Invoices.setAmmount();
+        })
+        $("#invoice_vat").on("change", function () {
+            App.Invoices.setAmmount();
+        })
 
+
+    },
+
+    setAmmount: function () {
+        var hours = 0;
+        var ids = $("#invoice_reports_ids").val();
+        $("#reports_table > tbody").html("");
+        for (i = 0; i < ids.length; i++) {
+
+            $.get("/reports/" + ids[i] + ".json").done(function (report) {
+                var row = $('<tr />');
+                row.append($('<td />').html(report.description));
+                row.append($('<td />').html(report.hours));
+                $("#reports_table > tbody").append(row);
+
+                hours += report.hours;
+                ammount = hours * $("#invoice_hourly_cost").val();
+                $("#invoice_amount").val(ammount);
+
+            });
+        }
 
     },
     edit: function () {

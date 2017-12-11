@@ -3,6 +3,7 @@
     <div class="row">
       <div class="col-lg-4">
         <div class="card">
+          <div class="card-header">Invoice:</div>
           <div class="card-body">
             <table class="table">
               <thead>
@@ -24,12 +25,6 @@
                 </td>
                 <td><%= @invoice.amount %></td>
               </tr>
-
-              <% Report.where(invoice_id: @invoice.id).each do |report| %>
-                <%= report.description %>
-                <%= report.hours %>
-              <% end %>
-
               <tr>
                 <td>
                   <div class="btn-group">
@@ -38,6 +33,32 @@
                 </td>
               </tr>
               </thead>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="card">
+          <div class="card-header">Reports</div>
+          <div class="card-body">
+            <table class="table">
+              <thead>
+              <tr>
+                <th>
+                  <strong>Descritpion</strong>
+                </th>
+                <th><strong>Client</strong></th>
+              </tr>
+              </thead>
+              <tbody>
+              <% Report.where(invoice_id: @invoice.id).each do |report| %>
+                <tr>
+                  <td><%= report.description %></td>
+                  <td><%= report.hours %></td>
+                </tr>
+              <% end %>
+
+              </tbody>
             </table>
           </div>
         </div>
