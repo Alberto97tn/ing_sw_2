@@ -1,17 +1,18 @@
+/*
+
+    la funzione setAmmount non è stata scritta molto bene, al suo interno vado a generare la tabella e sopratutto
+    faccio delle richieste di dati che in realtà avrei già.
+    Avendo tempo andremo a migliorare questo js
+
+
+    Siammo coscenti che manca una inizzializzazione del form nell'edit del modello
+ */
+
+
 App.Invoices = {
 
     create: function () {
-
-        /*function search(nameKey, myArray) {
-            for (var i = 0; i < myArray.length; i++) {
-                if (myArray[i].name === nameKey) {
-                    return myArray[i];
-                }
-            }
-        }*/
-
         var reports;
-
         $("#invoice_client_id").on("change", function () {
             $.get("/reports/unbilled_reports_by_client.json?client_id=" + $("#invoice_client_id").val()).done(function (data) {
                 reports = data;
