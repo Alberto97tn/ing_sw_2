@@ -15,12 +15,11 @@ When('I fill in the form with valid data') do
   fill_in 'Hours', with: 5
   fill_in 'Description', with: 'la descrizione è una cosa importante'
   select @clients.first.name, from: 'report_client_id'
-  click_on 'Save'
 end
 
 
 Then('I should see the report page') do
   @report = Report.last
-  expect(page).to have_content(@report.descritpion)
+  expect(page).to have_content(@report.description)
 end
 
