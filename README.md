@@ -18,7 +18,9 @@ User: admin@email.com
 
 Password: 12345demo
 
-#License
+---
+
+##License
 
 InvoiceApplication is distribuited under the terms of the MIT License.
-See [LICENSE](https://github.com/Nittarab/ing_sw_2/LICENSE) for datails.
+See [LICENSE](LICENSE) for datails.
