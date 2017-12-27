@@ -1,4 +1,4 @@
-# InvoicesManager 
+# InvoicesManager
 
 Progetto scolastico per il corso di Ingegneria del sotfware 2, gestionale per le fatture realizzato in ruby on rails
 
@@ -17,3 +17,10 @@ quindi eseguire `rails db:seed`
 User: admin@email.com
 
 Password: 12345demo
+
+---
+
+##License
+
+InvoiceApplication is distribuited under the terms of the MIT License.
+See [LICENSE](LICENSE) for datails.
