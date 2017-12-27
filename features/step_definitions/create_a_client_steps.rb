@@ -36,7 +36,3 @@ Then('I should see the client page') do
   @client = Client.last
   expect(page).to have_content(@client.name)
 end
-
-Then('I must continue to see the client form page') do
-  expect(page).to have_css('.clients.new')
-end

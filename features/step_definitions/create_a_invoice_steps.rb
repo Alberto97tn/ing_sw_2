@@ -16,8 +16,8 @@ When('I select the client') do
 end
 
 Then('I can select some unbilled reports') do
-  # expect(page).to have_selector('#selection_multiple', visible: true)
-  # select @reports.first.description, from: 'invoice_reports_ids'
+   expect(page).to have_selector('#selection_multiple', visible: true)
+   select @reports.first.description, from: 'invoice_reports_ids'
 end
 
 And('I fill the form with valid data') do
@@ -38,6 +38,7 @@ And('The amount should be equal to the the amount of hours for the hourly_cost p
                     @invoice.hourly_cost + @invoice.vat / 100
 end
 
-Then('I should see the invoices form') do
-  expect(page).to have_css('.invoices.new')
+And('I should see the pdf') do
+  expect(current_path).to eq invoice_path(@invoice, format: 'pdf')
 end
+

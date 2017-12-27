@@ -23,5 +23,4 @@ re
     Given I am on the reports index page
     When I click on "New Report"
     And The form require some inputs
-    And I click on "Save"
-    Then I must continue to see the report form page
+

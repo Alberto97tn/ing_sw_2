@@ -12,7 +12,8 @@ Feature: create a invoice
     And I have some client's reports
 
 #Creo Scenario per la creazione di una "new invoce"
-  Scenario: create a new invoices
+  @javascript
+  Scenario: create a new invoices with pdf
     Given I am in the invoices index page
     And I click on 'New Invoice'
     When I select the client
@@ -21,10 +22,13 @@ Feature: create a invoice
     And I click on "Save"
     Then I should see the invoice page
     And The amount should be equal to the the amount of hours for the hourly_cost plus vat
+    Then I click on "PDF"
+    And I should see the pdf
+
+
 #Creao Scenario in caso negativo ovvero non inserico i dati
   Scenario: can't leave Client blank
     Given I am in the invoices index page
     And I click on "New Invoice"
     And The form require some inputs
-    And I click on "Save"
-    Then I should see the invoices form
+

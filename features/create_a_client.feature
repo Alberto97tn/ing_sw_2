@@ -20,8 +20,8 @@ Feature: Crete a client
     When I click on "New Client"
     And I insert the name blank
     And The form require some inputs
-    And I click on "Save"
-    Then I must continue to see the client form page
+
+
 
     #Then I should see one message of error
     # questo non riusciamo a testarlo perché utilizziamo la validazione tramite l'html 5
