@@ -20,7 +20,7 @@ Password: 12345demo
 
 ---
 
-##License
+## License
 
 InvoiceApplication is distribuited under the terms of the MIT License.
 See [LICENSE](LICENSE) for datails.

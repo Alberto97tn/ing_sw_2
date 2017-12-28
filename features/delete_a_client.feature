@@ -11,4 +11,8 @@ Feature:  I wont to delete a client,
 
   Scenario: Delete a client form index page
     Given I am in a list of clients
-    And I delete the first client
+    When I click on "Destroy"
+    And I confirm the popup
+    Then I should not see "Khal Drogo" on my client list
+    And All the hours associated to that client should be destroyed
+    And All the invoices billed to that client should be destroyed
