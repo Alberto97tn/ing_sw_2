@@ -24,3 +24,6 @@ Password: 12345demo
 
 InvoiceApplication is distribuited under the terms of the MIT License.
 See [LICENSE](LICENSE) for datails.
+
+## Copyright
+Copyright (c) 2017 Barattin Patrick & Girdea Robert-Adelin

@@ -1,4 +1,4 @@
-Feature:  I wont to delete a client,
+Feature: I wont to delete a client,
   from his page or from the index page
 
   Background:

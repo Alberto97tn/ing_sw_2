@@ -14,4 +14,3 @@ Feature: Edit a client
     When I fill to edit the client from with valid data
     And I click on "Save"
     Then I should see the edited client page
-
