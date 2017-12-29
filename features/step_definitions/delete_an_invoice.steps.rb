@@ -1,5 +1,9 @@
-Then("I should not see that invoice on the invoices page")do
-  expect(page).to_not have_content(@invoice.amount)
-  expect(page).to_not have_content(@invoice.invoice_number)
-
+Given('I am on the Invoices page') do
+  visit invoices_path
+  expect(page).to have_css('.invoices.index')
 end
+
+Then('I delete the Invoice') do
+  expect {first(:link, 'Destroy').click}.to change(Invoice, :count).by(-1)
+end
+

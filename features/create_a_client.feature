@@ -19,7 +19,7 @@ Feature: Crete a client
     Given I am in the clients index page
     When I click on "New Client"
     And I insert the name blank
-    And The form require some inputs
+    But The form require some inputs
 
 
 

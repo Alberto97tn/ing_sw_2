@@ -9,8 +9,7 @@ Feature: delete an invoice
     And I have some client's reports
     And I have created at least one invoice
 
-  Scenario: delete invoice
-    Given I am on the "Invoices" page
-    When I choose to "destroy" a "invoice"
-    And I confirm the popup
-    Then I should not see that invoice on the invoices page
+  Scenario: delete invoice from index page
+    Given I am on the Invoices page
+    Then I delete the Invoice
+

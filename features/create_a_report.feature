@@ -22,5 +22,5 @@ re
   Scenario: Can't leave any fields blank
     Given I am on the reports index page
     When I click on "New Report"
-    And The form require some inputs
+    But The form require some inputs
 

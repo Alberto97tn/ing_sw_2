@@ -11,13 +11,12 @@ Feature: edit a report
     And I have some client's reports
 
   Scenario: edit a report successfully
-    Given I am on the "Reports" page
-    And I choose to "edit" a "report"
+    Given I am on the Report page
+    And I click on "Edit"
     When I change the description to "Another Description"
     Then My report should have the description "Another Description"
 
   Scenario: edit unsuccessful
-    Given I am on the "Reports" page
-    And I choose to "edit" a "report"
-    When I leave the description empty
-    Then The form require some inputs
+    Given I am on the Report page
+    And I click on "Edit"
+    But The form require some inputs

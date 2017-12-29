@@ -12,13 +12,12 @@ Feature: edit an invoice
     And I have created at least one invoice
 
   Scenario: edit an invoice successfully
-    Given I am on the "Invoices" page
-    And I choose to "edit" a "invoice"
+    Given I am on the Invoice page
+    And I click on "Edit"
     When I change the client that the invoice belongs to
     Then My invoice should have the new client's name
 
   Scenario: edit unsuccessful
-    Given I am on the "Invoices" page
-    And I choose to "edit" a "invoice"
-    When I leave the client field empty
-    Then The form require some inputs
+    Given I am on the Invoice page
+    And I click on "Edit"
+    But The form require some inputs
